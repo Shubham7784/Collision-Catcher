@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEFF1"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/speedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Speed"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/speedText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:id="@+id/speedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0 km/h"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:textColor="#0277BD"
+        app:layout_constraintTop_toBottomOf="@id/speedTitle"
+        app:layout_constraintBottom_toTopOf="@id/accuracyText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/accuracyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS Accuracy: Waiting..."
+        android:textSize="14sp"
+        android:textColor="#455A64"
+        app:layout_constraintTop_toBottomOf="@id/speedText"
+        app:layout_constraintBottom_toTopOf="@id/startStopButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Start Tracking"
+        android:backgroundTint="#0277BD"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/accuracyText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
