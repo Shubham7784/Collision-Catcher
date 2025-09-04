@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "688321976569",
+    "project_id": "collision-catcher-c1796",
+    "storage_bucket": "collision-catcher-c1796.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688321976569:android:9943559748b16b97b5aa28",
+        "android_client_info": {
+          "package_name": "com.app.collisioncatcher"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxr2IJcyvk5LRFQnCq2O5TxwHCJqUHVTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

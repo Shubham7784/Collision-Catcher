@@ -1,0 +1,9 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_home" android:title="Home" android:icon="@android:drawable/ic_menu_view"/>
+    <item android:id="@+id/nav_track_speed" android:title="Track Speed" android:icon="@android:drawable/ic_menu_mylocation"/>
+    <item android:id="@+id/nav_theft_protection" android:title="Theft Protection" android:icon="@android:drawable/ic_lock_lock"/>
+    <item android:id="@+id/nav_profile" android:title="Profile" android:icon="@android:drawable/ic_menu_myplaces"/>
+    <item android:id="@+id/nav_map" android:title="Track Gps" android:icon="@android:drawable/ic_menu_mapmode"/>
+    <item android:id="@+id/nav_settings" android:title="Settings" android:icon="@android:drawable/ic_menu_preferences"/>
+</menu>
