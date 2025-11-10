@@ -3,9 +3,13 @@ package com.asus.Collision.Catcher.Service;
 import com.asus.Collision.Catcher.Entity.User;
 import com.asus.Collision.Catcher.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class UserService {
@@ -26,6 +30,7 @@ public class UserService {
         if(byuserName==null)
         {
             userEntry.setPassword(passwordEncoder.encode(userEntry.getPassword()));
+            userEntry.setRole("user");
             saveUser(userEntry);
             res = true;
         }
@@ -39,5 +44,10 @@ public class UserService {
 
     public User findByName(String userName) {
         return userRepository.findByuserName(userName);
+    }
+
+    public List<User> getAllUsers()
+    {
+        return userRepository.findAll();
     }
 }

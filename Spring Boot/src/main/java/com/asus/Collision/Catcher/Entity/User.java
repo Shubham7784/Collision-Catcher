@@ -24,6 +24,9 @@ public class User {
 
     private String age;
 
+    @NonNull
+    private String role;
+
     private String userName;
     @NonNull
     private String phoneNo;

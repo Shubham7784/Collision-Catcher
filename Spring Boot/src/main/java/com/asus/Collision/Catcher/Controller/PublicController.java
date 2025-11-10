@@ -51,7 +51,29 @@ public class PublicController {
             UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUserName());
             String jwtToken = jwtUtils.generateToken(userDetails.getUsername());
             return new ResponseEntity<>(jwtToken,HttpStatus.OK);
-        } catch (AuthenticationException e) {
+        }
+        catch (AuthenticationException e) {
+            log.error("Error while generating token",e);
+            return new ResponseEntity<>("Incorrect Username or Password",HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @PostMapping("/login-admin")
+    public ResponseEntity<?> loginAdmin(@RequestBody User user)
+    {
+        try{
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword()));
+            UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUserName());
+            String role = userService.findByName(userDetails.getUsername()).getRole();
+            if(role.equals("admin"))
+            {
+                String jwtToken = jwtUtils.generateToken(userDetails.getUsername());
+                return new ResponseEntity<>(jwtToken,HttpStatus.OK);
+            }
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+        catch (AuthenticationException e)
+        {
             log.error("Error while generating token",e);
             return new ResponseEntity<>("Incorrect Username or Password",HttpStatus.BAD_REQUEST);
         }

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,50 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollisionCatcher"
         tools:targetApi="31">
-
-        <!--
-             TODO: Before you run your application, you need a Google Maps API key.
-
-             To get one, follow the directions here:
-
-                https://developers.google.com/maps/documentation/android-sdk/get-api-key
-
-             Once you have your API key (it starts with "AIza"), define a new property in your
-             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
-             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDs0w-xDe1Ff9Ujj9L_-wnIQduqjOzWxPU" />
-
         <activity
-            android:name=".Acitivities.MapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_maps" />
-        <activity
-            android:name=".Acitivities.EditProfileActivity"
-            android:exported="false"
-            android:label="@string/title_activity_edit_profile"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.AddMemberActivity"
-            android:exported="false"
-            android:label="@string/title_activity_add_memeber"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.ProfileActivity"
-            android:exported="false"
-            android:label="@string/title_activity_profile"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.SettingsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.CollisionCatcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,46 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Acitivities.TheftProtectionActivity"
-            android:exported="false"
-            android:label="@string/title_activity_theft_protection"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.SpeedTrackingActivity"
-            android:exported="false"
-            android:label="@string/title_activity_speed_tracking"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.ForgotPasswordActivity"
-            android:exported="false"
-            android:label="@string/title_activity_forgot_password"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.SignupActivity"
-            android:exported="false"
-            android:label="@string/title_activity_signup"
-            android:theme="@style/Theme.CollisionCatcher" />
-        <activity
-            android:name=".Acitivities.LoginActivity"
-            android:exported="true"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.CollisionCatcher" />
-
-        <service
-            android:name=".MyFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-            </intent-filter>
-        </service>
-        <receiver android:name=".AlarmReceiver" android:exported="true"/>
-        <service android:name=".Acitivities.OverlayService" android:exported="false" />
     </application>
 
 </manifest>

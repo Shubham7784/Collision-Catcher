@@ -2,18 +2,16 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
-    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.app.collisioncatcher"
-    compileSdk = 35
+    namespace = "com.collisioncatcher"
+    compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.app.collisioncatcher"
-        minSdk = 28
-        targetSdk = 35
+        applicationId = "com.collisioncatcher"
+        minSdk = 26
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -38,7 +36,6 @@ android {
     }
     buildFeatures {
         compose = true
-        viewBinding = true
     }
 }
 
@@ -52,11 +49,17 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.cardview)
-    implementation(libs.material)
-    implementation(libs.androidx.drawerlayout)
-    implementation(libs.androidx.appcompat)
+    // Material Icons (extended set for Speed/Security icons)
+    implementation(libs.androidx.material.icons.extended)
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+    // Accompanist (permissions)
+    implementation(libs.accompanist.permissions)
+    // Maps Compose (stub for later wiring)
+    implementation(libs.maps.compose)
+    implementation(libs.play.services.maps)
+    implementation(libs.androidx.foundation.layout.android)
+    implementation(libs.androidx.foundation.layout.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -67,10 +70,7 @@ dependencies {
     implementation (libs.gson)
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
-    implementation (libs.okhttp)
-    implementation(libs.bson) // BSON library
-    implementation(libs.play.services.maps)
-    implementation(libs.firebase.messaging)
-
-//    implementation("org.projectlombok:lombok:1.18.24")
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.bson)
+    implementation(libs.bson.kotlinx)
 }

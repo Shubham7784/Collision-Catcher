@@ -30,7 +30,9 @@ public class SecurityConfig{
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
                         .requestMatchers("/public/**").permitAll()
                         .requestMatchers("/hardware/**").permitAll()
+                        .requestMatchers("/admin/**").permitAll()
                         .requestMatchers("/api/sms/**").permitAll()
+                        .requestMatchers("/alerts/**").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(Session -> Session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
